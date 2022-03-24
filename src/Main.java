@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +7,6 @@ public class Main {
         String[] mods = input.nextLine().split(" ");
         System.out.println("\nPlease list the remainder when modding by each of the numbers already listed respectively. (Space separated):\n");
         String[] remainders = input.nextLine().split(" ");
-
-
+        Calculator.solve(mods, remainders);
     }
 }
