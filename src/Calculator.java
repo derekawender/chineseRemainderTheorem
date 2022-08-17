@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class Calculator {
     public static int M = 1;
     public static int solve(String[] mod, String[] rem) {
@@ -7,6 +8,7 @@ public class Calculator {
                     "Please try entering them again after starting the program again");
             System.exit(0);
         } else{
+            M = 1;
             int sum = 0;
             int[] intMods = Arrays.stream(mod)
                     .mapToInt(Integer::parseInt)
@@ -14,11 +16,15 @@ public class Calculator {
             int [] intrem = Arrays.stream(rem)
                     .mapToInt(Integer::parseInt)
                     .toArray();
+            System.out.println(Arrays.toString(intMods));
+            System.out.println(Arrays.toString(intrem));
 
             for (int i = 0; i < intMods.length; i++) {
                 M *= intMods[i];
             }
             int[] inverses = findInverses(intMods);
+            System.out.println(sum);
+            System.out.println(M);
             for (int i = 0; i < inverses.length; i++){
                 sum += inverses[i] * (M/intMods[i]) * intrem[i];
 
@@ -78,4 +84,5 @@ public class Calculator {
             return checkGCD(Math.min(m1, m2), comDenom);
         }
     }
+
 }
