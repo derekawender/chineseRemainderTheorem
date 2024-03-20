@@ -1,1 +1,1 @@
-"# chineseRemainderTheorem" 
+Chinese Remainer Theorem Calculator
